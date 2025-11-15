@@ -17,6 +17,24 @@ A Python-based presentation generation framework that works with **AI_Instructio
 
 - Python 3.8 or higher
 - Graphviz (for flowcharts)
+- [uv](https://github.com/astral-sh/uv) - Fast Python package installer (recommended)
+
+### Install uv (Recommended)
+
+**Linux/macOS:**
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**Windows:**
+```powershell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+**Alternative (with pip):**
+```bash
+pip install uv
+```
 
 ### Install Graphviz
 
@@ -35,7 +53,29 @@ Download from https://graphviz.org/download/
 
 ### Install Package
 
-#### Option 1: Using Virtual Environment (Recommended)
+#### Option 1: Using uv (Recommended - Fast)
+
+```bash
+# Clone repository
+git clone https://github.com/dobachi/PresentationTemplate.git
+cd PresentationTemplate
+
+# Initialize AI_Instruction_Kits submodule
+git submodule update --init --recursive
+
+# Create virtual environment and install dependencies with uv
+uv venv
+source .venv/bin/activate  # On Linux/macOS
+# .venv\Scripts\activate    # On Windows
+
+# Install dependencies
+uv pip install -r requirements.txt
+
+# Install package in development mode
+uv pip install -e .
+```
+
+#### Option 2: Using Traditional venv + pip
 
 ```bash
 # Clone repository
@@ -49,32 +89,13 @@ git submodule update --init --recursive
 python3 -m venv venv
 
 # Activate virtual environment
-# On Linux/macOS:
-source venv/bin/activate
-# On Windows:
-# venv\Scripts\activate
+source venv/bin/activate  # On Linux/macOS
+# venv\Scripts\activate    # On Windows
 
 # Install dependencies
 pip install -r requirements.txt
 
 # Install package in development mode
-pip install -e .
-```
-
-#### Option 2: Using System Python
-
-```bash
-# Clone repository
-git clone https://github.com/dobachi/PresentationTemplate.git
-cd PresentationTemplate
-
-# Initialize AI_Instruction_Kits submodule
-git submodule update --init --recursive
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Install package
 pip install -e .
 ```
 
