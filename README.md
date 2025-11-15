@@ -35,6 +35,34 @@ Download from https://graphviz.org/download/
 
 ### Install Package
 
+#### Option 1: Using Virtual Environment (Recommended)
+
+```bash
+# Clone repository
+git clone https://github.com/dobachi/PresentationTemplate.git
+cd PresentationTemplate
+
+# Initialize AI_Instruction_Kits submodule
+git submodule update --init --recursive
+
+# Create virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+# On Linux/macOS:
+source venv/bin/activate
+# On Windows:
+# venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Install package in development mode
+pip install -e .
+```
+
+#### Option 2: Using System Python
+
 ```bash
 # Clone repository
 git clone https://github.com/dobachi/PresentationTemplate.git
