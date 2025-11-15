@@ -1,0 +1,40 @@
+# Technical Theme Configuration
+
+name: technical
+description: Technical presentation theme with dark accents
+
+colors:
+  primary: "#2C3E50"      # Dark blue-gray
+  secondary: "#34495E"    # Lighter blue-gray
+  accent: "#E74C3C"       # Red
+  background: "#FFFFFF"   # White
+  text: "#2C3E50"         # Dark blue-gray
+  series:
+    - "#3498DB"  # Blue
+    - "#E74C3C"  # Red
+    - "#2ECC71"  # Green
+    - "#F39C12"  # Orange
+    - "#9B59B6"  # Purple
+
+fonts:
+  title: "Meiryo"
+  body: "Meiryo"
+  code: "Consolas"
+  title_en: "Calibri"
+  body_en: "Calibri"
+
+sizes:
+  title: 44
+  subtitle: 32
+  heading: 28
+  body: 16
+  caption: 12
+  code: 14
+
+layout:
+  margin_left: 0.5
+  margin_right: 0.5
+  margin_top: 0.5
+  margin_bottom: 0.5
+  content_width: 9
+  content_height: 6
