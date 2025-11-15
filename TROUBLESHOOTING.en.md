@@ -4,7 +4,31 @@ English | [日本語](TROUBLESHOOTING.md)
 
 ## Graphviz Errors
 
-### Error: "Graphviz executable not found"
+### Important: Graphviz requires TWO components
+
+To use Graphviz, you need **BOTH**:
+
+1. **Python package** `graphviz` - Python library to use Graphviz
+2. **System software** Graphviz - The actual program that draws diagrams
+
+### Error: "No module named 'graphviz'"
+
+**Cause:** Python graphviz package is not installed.
+
+**Solution:**
+
+```bash
+# If using uv
+uv pip install graphviz
+
+# If using pip
+pip install graphviz
+
+# Or reinstall all dependencies
+uv pip install -r requirements.txt
+```
+
+### Error: "Graphviz executable not found" or "FileNotFoundError"
 
 **Cause:** Graphviz system software is not installed.
 

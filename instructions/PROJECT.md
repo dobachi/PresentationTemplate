@@ -9,6 +9,71 @@
 3. **PowerPoint作成**: テーマ付きの専門的な.pptxファイル
 4. **バイリンガル対応**: 日本語と英語のプレゼンテーション
 
+## 重要: Python環境の使用方法
+
+**このプロジェクトでPythonコードを実行する際は、必ず以下の手順に従ってください：**
+
+### 1. 初回セットアップ（プロジェクト開始時に1回のみ）
+
+```bash
+# uvで仮想環境を作成
+uv venv
+
+# 依存関係をインストール
+uv pip install -r requirements.txt
+
+# 開発モードでパッケージをインストール
+uv pip install -e .
+```
+
+### 2. Pythonコード実行時の必須手順
+
+**毎回、Pythonコードを実行する前に必ず仮想環境を有効化してください：**
+
+```bash
+# Linux/macOS
+source .venv/bin/activate
+
+# Windows
+# .venv\Scripts\activate
+```
+
+**または、仮想環境のPythonを直接使用：**
+
+```bash
+# 仮想環境のPythonを使用してスクリプトを実行
+.venv/bin/python your_script.py
+
+# 仮想環境のPythonでモジュールを実行
+.venv/bin/python -m your_module
+```
+
+### 3. 依存関係の確認
+
+依存関係が正しくインストールされているか確認：
+
+```bash
+# 診断スクリプトを実行
+.venv/bin/python scripts/check_dependencies.py
+```
+
+### ❌ やってはいけないこと
+
+- システムのPython (`/usr/bin/python3`, `python3`) を直接使わない
+- 仮想環境を有効化せずにコードを実行しない
+- `pip` を直接使わない（常に `uv pip` を使用）
+
+### ✅ 正しい実行例
+
+```bash
+# 仮想環境を有効化してから実行
+source .venv/bin/activate
+python examples/architecture_example.py
+
+# または仮想環境のPythonを直接指定
+.venv/bin/python examples/architecture_example.py
+```
+
 ## あなたの役割
 
 ユーザーを**段階的なプレゼンテーション作成**を通じてガイドする：

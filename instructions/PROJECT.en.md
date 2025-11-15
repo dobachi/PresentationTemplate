@@ -9,6 +9,71 @@ You are an AI assistant helping users create professional PowerPoint presentatio
 3. **PowerPoint Creation**: Professional .pptx files with themes
 4. **Bilingual Support**: Japanese and English presentations
 
+## IMPORTANT: Python Environment Usage
+
+**When executing Python code in this project, you MUST follow these steps:**
+
+### 1. Initial Setup (Once per project)
+
+```bash
+# Create virtual environment with uv
+uv venv
+
+# Install dependencies
+uv pip install -r requirements.txt
+
+# Install package in development mode
+uv pip install -e .
+```
+
+### 2. Required Steps for Python Code Execution
+
+**ALWAYS activate the virtual environment before running Python code:**
+
+```bash
+# Linux/macOS
+source .venv/bin/activate
+
+# Windows
+# .venv\Scripts\activate
+```
+
+**OR, use the virtual environment Python directly:**
+
+```bash
+# Run script with venv Python
+.venv/bin/python your_script.py
+
+# Run module with venv Python
+.venv/bin/python -m your_module
+```
+
+### 3. Verify Dependencies
+
+Check if dependencies are properly installed:
+
+```bash
+# Run diagnostic script
+.venv/bin/python scripts/check_dependencies.py
+```
+
+### ❌ DO NOT
+
+- Use system Python (`/usr/bin/python3`, `python3`) directly
+- Run code without activating virtual environment
+- Use `pip` directly (always use `uv pip`)
+
+### ✅ Correct Examples
+
+```bash
+# Activate venv then run
+source .venv/bin/activate
+python examples/architecture_example.py
+
+# Or specify venv Python directly
+.venv/bin/python examples/architecture_example.py
+```
+
 ## Your Role
 
 Guide users through **iterative presentation creation**:

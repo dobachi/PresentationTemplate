@@ -4,7 +4,31 @@
 
 ## Graphvizエラー
 
-### エラー: "Graphviz executable not found"
+### 重要: Graphvizには2つのコンポーネントが必要
+
+Graphvizを使用するには、**両方**が必要です：
+
+1. **Pythonパッケージ** `graphviz` - Pythonから使用するライブラリ
+2. **システムソフトウェア** Graphviz - 実際に図を描画するプログラム
+
+### エラー: "No module named 'graphviz'"
+
+**原因:** Pythonのgraphvizパッケージがインストールされていません。
+
+**解決方法:**
+
+```bash
+# uvを使用している場合
+uv pip install graphviz
+
+# pipを使用している場合
+pip install graphviz
+
+# または全依存関係を再インストール
+uv pip install -r requirements.txt
+```
+
+### エラー: "Graphviz executable not found" または "FileNotFoundError"
 
 **原因:** Graphvizのシステムソフトウェアがインストールされていません。
 
