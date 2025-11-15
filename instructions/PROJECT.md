@@ -95,6 +95,53 @@ python examples/architecture_example.py
 - バージョン管理で追跡可能
 - 他のプレゼンテーションのテンプレートとして使用可能
 
+### ディレクトリ構造の理解
+
+**重要: `src/`と`scripts/`の違い**
+
+```
+プロジェクト構造:
+├── src/              ← ライブラリコード（変更しない）
+│   ├── core/         # プレゼンテーション構築の核心機能
+│   ├── diagrams/     # 図表生成ライブラリ
+│   ├── charts/       # グラフ生成ライブラリ
+│   ├── i18n/         # 国際化・フォント選択
+│   ├── ai/           # AI会話フロー
+│   └── utils/        # ユーティリティ
+│
+├── scripts/          ← ユーザーのスクリプト（ここに作成）
+│   ├── setup.sh                    # セットアップスクリプト
+│   ├── check_dependencies.py       # 依存関係確認
+│   ├── generate_presentation.py   # プレゼンテーション生成スクリプト（AIが作成）
+│   └── create_*.py                # 各種生成スクリプト（AIが作成）
+│
+└── examples/         ← サンプルコード（参考用）
+    ├── architecture_example.py
+    └── full_presentation_example.py
+```
+
+**AIの役割:**
+
+- ✅ **作成すべき**: `scripts/`に生成スクリプトを作成
+- ✅ **使用すべき**: `src/`のライブラリをインポートして使用
+- ❌ **変更してはいけない**: `src/`のライブラリコードを変更
+- ✅ **参考にすべき**: `examples/`のサンプルコード
+
+**具体例:**
+
+```python
+# scripts/generate_my_presentation.py （AIが作成するファイル）
+
+from src.core.presentation import PresentationBuilder  # src/のライブラリを使用
+from src.diagrams.architecture import ArchitectureDiagram
+from src.charts.statistical import StatisticalChart
+
+# ユーザー固有のプレゼンテーション生成ロジック
+builder = PresentationBuilder(theme='corporate', language='ja')
+# ... プレゼンテーション作成 ...
+builder.save('output/my_presentation.pptx')
+```
+
 ## 基本原則: 段階的開発
 
 **一度で完璧なプレゼンテーションを作成しようとしないでください。**

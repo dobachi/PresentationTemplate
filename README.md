@@ -311,19 +311,35 @@ builder.add_title_slide(
 
 ```
 PresentationTemplate/
-├── src/
-│   ├── core/           # コアプレゼンテーション構築
-│   ├── diagrams/       # 図表生成
-│   ├── charts/         # グラフ生成
-│   └── ai/             # AI会話フロー
+├── src/                      # ライブラリコード（変更しない）
+│   ├── core/                 # コアプレゼンテーション構築
+│   ├── diagrams/             # 図表生成ライブラリ
+│   ├── charts/               # グラフ生成ライブラリ
+│   ├── i18n/                 # 国際化・フォント選択
+│   ├── ai/                   # AI会話フロー
+│   └── utils/                # ユーティリティ
+├── scripts/                  # ユーザースクリプト（ここに作成）
+│   ├── setup.sh              # セットアップスクリプト
+│   ├── check_dependencies.py # 依存関係確認
+│   └── generate_*.py         # プレゼンテーション生成スクリプト
 ├── config/
-│   └── themes/         # テーマ設定
+│   └── themes/               # テーマ設定
 ├── instructions/
 │   ├── ai_instruction_kits/  # サブモジュール
-│   └── modules/        # カスタム指示モジュール
-├── examples/           # 使用例
-└── templates/          # PowerPointテンプレート
+│   └── modules/              # カスタム指示モジュール
+├── examples/                 # サンプルコード（参考用）
+│   ├── architecture_example.py
+│   └── full_presentation_example.py
+├── output/                   # 生成されたプレゼンテーション
+└── templates/                # PowerPointテンプレート
 ```
+
+### ディレクトリの役割
+
+- **`src/`**: このテンプレートが提供するライブラリコード。**変更しない**
+- **`scripts/`**: ユーザーがプレゼンテーション生成用に作成するスクリプト。**ここに作成**
+- **`examples/`**: 使い方の参考となるサンプルコード
+- **`output/`**: 生成された.pptxファイルが保存される場所
 
 ## トラブルシューティング
 

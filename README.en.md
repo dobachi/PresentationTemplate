@@ -311,19 +311,35 @@ These work with the [AI_Instruction_Kits](https://github.com/dobachi/AI_Instruct
 
 ```
 PresentationTemplate/
-├── src/
-│   ├── core/           # Core presentation building
-│   ├── diagrams/       # Diagram generation
-│   ├── charts/         # Chart generation
-│   └── ai/             # AI conversation flow
+├── src/                      # Library code (DO NOT modify)
+│   ├── core/                 # Core presentation building
+│   ├── diagrams/             # Diagram generation library
+│   ├── charts/               # Chart generation library
+│   ├── i18n/                 # Internationalization & fonts
+│   ├── ai/                   # AI conversation flow
+│   └── utils/                # Utilities
+├── scripts/                  # User scripts (CREATE HERE)
+│   ├── setup.sh              # Setup script
+│   ├── check_dependencies.py # Dependency checker
+│   └── generate_*.py         # Presentation generation scripts
 ├── config/
-│   └── themes/         # Theme configurations
+│   └── themes/               # Theme configurations
 ├── instructions/
 │   ├── ai_instruction_kits/  # Submodule
-│   └── modules/        # Custom instruction modules
-├── examples/           # Usage examples
-└── templates/          # PowerPoint templates
+│   └── modules/              # Custom instruction modules
+├── examples/                 # Sample code (for reference)
+│   ├── architecture_example.py
+│   └── full_presentation_example.py
+├── output/                   # Generated presentations
+└── templates/                # PowerPoint templates
 ```
+
+### Directory Roles
+
+- **`src/`**: Library code provided by this template. **DO NOT modify**
+- **`scripts/`**: User-created scripts for presentation generation. **CREATE HERE**
+- **`examples/`**: Sample code demonstrating usage
+- **`output/`**: Location where generated .pptx files are saved
 
 ## Troubleshooting
 

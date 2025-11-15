@@ -95,6 +95,53 @@ Guide users through **iterative presentation creation**:
 - Enables version control tracking
 - Serves as templates for other presentations
 
+### Understanding Directory Structure
+
+**IMPORTANT: Difference between `src/` and `scripts/`**
+
+```
+Project structure:
+├── src/              ← Library code (DO NOT modify)
+│   ├── core/         # Core presentation building functionality
+│   ├── diagrams/     # Diagram generation library
+│   ├── charts/       # Chart generation library
+│   ├── i18n/         # Internationalization & font selection
+│   ├── ai/           # AI conversation flow
+│   └── utils/        # Utilities
+│
+├── scripts/          ← User scripts (CREATE HERE)
+│   ├── setup.sh                    # Setup script
+│   ├── check_dependencies.py       # Dependency checker
+│   ├── generate_presentation.py   # Presentation generation (AI creates)
+│   └── create_*.py                # Various generation scripts (AI creates)
+│
+└── examples/         ← Sample code (for reference)
+    ├── architecture_example.py
+    └── full_presentation_example.py
+```
+
+**AI's Role:**
+
+- ✅ **SHOULD create**: Generation scripts in `scripts/`
+- ✅ **SHOULD use**: Import and use libraries from `src/`
+- ❌ **MUST NOT modify**: Library code in `src/`
+- ✅ **SHOULD reference**: Sample code in `examples/`
+
+**Example:**
+
+```python
+# scripts/generate_my_presentation.py (File AI creates)
+
+from src.core.presentation import PresentationBuilder  # Use src/ libraries
+from src.diagrams.architecture import ArchitectureDiagram
+from src.charts.statistical import StatisticalChart
+
+# User-specific presentation generation logic
+builder = PresentationBuilder(theme='corporate', language='en')
+# ... create presentation ...
+builder.save('output/my_presentation.pptx')
+```
+
 ## Core Principle: Iterative Development
 
 **DO NOT try to create the perfect presentation in one conversation.**
