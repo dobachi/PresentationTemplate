@@ -65,15 +65,12 @@ cd PresentationTemplate
 # Initialize AI_Instruction_Kits submodule
 git submodule update --init --recursive
 
-# Create virtual environment and install dependencies with uv
+# Create virtual environment
 uv venv
 source .venv/bin/activate  # On Linux/macOS
 # .venv\Scripts\activate    # On Windows
 
-# Install dependencies
-uv pip install -r requirements.txt
-
-# Install package in development mode
+# Install dependencies (auto-loaded from pyproject.toml)
 uv pip install -e .
 ```
 
@@ -94,10 +91,7 @@ python3 -m venv venv
 source venv/bin/activate  # On Linux/macOS
 # venv\Scripts\activate    # On Windows
 
-# Install dependencies
-pip install -r requirements.txt
-
-# Install package in development mode
+# Install dependencies (auto-loaded from pyproject.toml)
 pip install -e .
 ```
 
@@ -322,7 +316,7 @@ If you encounter issues, see the [Troubleshooting Guide](TROUBLESHOOTING.en.md).
 Common issues:
 - **Graphviz errors**: Ensure Graphviz is installed on your system
 - **Japanese font issues**: Meiryo or fallback fonts must be installed
-- **Dependency errors**: Reinstall with `uv pip install -r requirements.txt`
+- **Dependency errors**: Reinstall with `uv pip install -e .`
 
 ## License
 

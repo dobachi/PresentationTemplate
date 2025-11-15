@@ -65,15 +65,12 @@ cd PresentationTemplate
 # AI_Instruction_Kitsサブモジュールの初期化
 git submodule update --init --recursive
 
-# 仮想環境の作成と依存関係のインストール
+# 仮想環境の作成
 uv venv
 source .venv/bin/activate  # Linux/macOS
 # .venv\Scripts\activate    # Windows
 
-# 依存関係のインストール
-uv pip install -r requirements.txt
-
-# 開発モードでパッケージをインストール
+# 依存関係のインストール（pyproject.tomlから自動読み込み）
 uv pip install -e .
 ```
 
@@ -94,10 +91,7 @@ python3 -m venv venv
 source venv/bin/activate  # Linux/macOS
 # venv\Scripts\activate    # Windows
 
-# 依存関係のインストール
-pip install -r requirements.txt
-
-# 開発モードでパッケージをインストール
+# 依存関係のインストール（pyproject.tomlから自動読み込み）
 pip install -e .
 ```
 
@@ -322,7 +316,7 @@ PresentationTemplate/
 よくある問題：
 - **Graphvizエラー**: システムにGraphvizがインストールされていることを確認
 - **日本語フォントの問題**: Meiryoまたは代替フォントがインストールされている必要があります
-- **依存関係エラー**: `uv pip install -r requirements.txt` で再インストール
+- **依存関係エラー**: `uv pip install -e .` で再インストール
 
 ## ライセンス
 

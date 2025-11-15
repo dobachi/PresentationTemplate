@@ -24,8 +24,8 @@ uv pip install graphviz
 # If using pip
 pip install graphviz
 
-# Or reinstall all dependencies
-uv pip install -r requirements.txt
+# Or reinstall all dependencies (from pyproject.toml)
+uv pip install -e .
 ```
 
 ### Error: "Graphviz executable not found" or "FileNotFoundError"
@@ -87,11 +87,11 @@ pip install graphviz
 **Solution:**
 
 ```bash
-# Reinstall all dependencies
-uv pip install -r requirements.txt
+# Reinstall all dependencies (from pyproject.toml)
+uv pip install -e .
 
 # or
-pip install -r requirements.txt
+pip install -e .
 ```
 
 ### Error: "No module named 'matplotlib'"

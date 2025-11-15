@@ -19,10 +19,7 @@
 # uvで仮想環境を作成
 uv venv
 
-# 依存関係をインストール
-uv pip install -r requirements.txt
-
-# 開発モードでパッケージをインストール
+# 依存関係をインストール（pyproject.tomlから自動読み込み）
 uv pip install -e .
 ```
 

@@ -24,8 +24,8 @@ uv pip install graphviz
 # pipを使用している場合
 pip install graphviz
 
-# または全依存関係を再インストール
-uv pip install -r requirements.txt
+# または全依存関係を再インストール（pyproject.tomlから）
+uv pip install -e .
 ```
 
 ### エラー: "Graphviz executable not found" または "FileNotFoundError"
@@ -87,11 +87,11 @@ pip install graphviz
 **解決方法:**
 
 ```bash
-# 全依存関係の再インストール
-uv pip install -r requirements.txt
+# 全依存関係の再インストール（pyproject.tomlから）
+uv pip install -e .
 
 # または
-pip install -r requirements.txt
+pip install -e .
 ```
 
 ### エラー: "No module named 'matplotlib'"

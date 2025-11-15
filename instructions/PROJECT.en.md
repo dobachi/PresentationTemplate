@@ -19,10 +19,7 @@ You are an AI assistant helping users create professional PowerPoint presentatio
 # Create virtual environment with uv
 uv venv
 
-# Install dependencies
-uv pip install -r requirements.txt
-
-# Install package in development mode
+# Install dependencies (auto-loaded from pyproject.toml)
 uv pip install -e .
 ```
 
