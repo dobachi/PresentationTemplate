@@ -1,25 +1,27 @@
-# AI-Assisted Graphical Presentation Generator
+# AI支援グラフィカルプレゼンテーション生成システム
 
-A Python-based presentation generation framework that works with **AI_Instruction_Kits** to enable AI-assisted creation of professional, graphical presentations for technical and business content.
+[English](README.en.md) | 日本語
 
-## Features
+**AI_Instruction_Kits**と連携して、技術・ビジネスコンテンツ向けの専門的でグラフィカルなプレゼンテーションをAI支援で作成するPythonベースのプレゼンテーション生成フレームワーク。
 
-- **AI-Assisted Conversation Mode**: Create presentations through natural language dialogue
-- **Multiple Diagram Types**: Architecture diagrams, flowcharts, network diagrams using `diagrams`, `graphviz`, and `networkx`
-- **Statistical Charts**: Line charts, bar charts, scatter plots, pie charts using `matplotlib` and `seaborn`
-- **Bilingual Support**: Japanese and English presentations with proper font handling
-- **Theme System**: Corporate, technical, and academic themes
-- **PowerPoint Generation**: Professional .pptx files with `python-pptx`
+## 機能
 
-## Installation
+- **AI支援会話モード**: 自然言語での対話を通じてプレゼンテーションを作成
+- **多様な図表タイプ**: `diagrams`、`graphviz`、`networkx`を使用したアーキテクチャ図、フローチャート、ネットワーク図
+- **統計グラフ**: `matplotlib`と`seaborn`を使用した折れ線グラフ、棒グラフ、散布図、円グラフ
+- **バイリンガル対応**: 適切なフォント処理による日本語・英語のプレゼンテーション
+- **テーマシステム**: Corporate、Technical、Academicテーマ
+- **PowerPoint生成**: `python-pptx`による専門的な.pptxファイル
 
-### Prerequisites
+## インストール
 
-- Python 3.8 or higher
-- Graphviz (for flowcharts)
-- [uv](https://github.com/astral-sh/uv) - Fast Python package installer (recommended)
+### 前提条件
 
-### Install uv (Recommended)
+- Python 3.8以上
+- Graphviz（フローチャート用）
+- [uv](https://github.com/astral-sh/uv) - 高速なPythonパッケージインストーラー（推奨）
+
+### uvのインストール（推奨）
 
 **Linux/macOS:**
 ```bash
@@ -31,12 +33,12 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-**Alternative (with pip):**
+**代替方法（pipを使用）:**
 ```bash
 pip install uv
 ```
 
-### Install Graphviz
+### Graphvizのインストール
 
 **Ubuntu/Debian:**
 ```bash
@@ -49,106 +51,106 @@ brew install graphviz
 ```
 
 **Windows:**
-Download from https://graphviz.org/download/
+https://graphviz.org/download/ からダウンロード
 
-### Install Package
+### パッケージのインストール
 
-#### Option 1: Using uv (Recommended - Fast)
+#### オプション1: uvを使用（推奨 - 高速）
 
 ```bash
-# Clone repository
+# リポジトリのクローン
 git clone https://github.com/dobachi/PresentationTemplate.git
 cd PresentationTemplate
 
-# Initialize AI_Instruction_Kits submodule
+# AI_Instruction_Kitsサブモジュールの初期化
 git submodule update --init --recursive
 
-# Create virtual environment and install dependencies with uv
+# 仮想環境の作成と依存関係のインストール
 uv venv
-source .venv/bin/activate  # On Linux/macOS
-# .venv\Scripts\activate    # On Windows
+source .venv/bin/activate  # Linux/macOS
+# .venv\Scripts\activate    # Windows
 
-# Install dependencies
+# 依存関係のインストール
 uv pip install -r requirements.txt
 
-# Install package in development mode
+# 開発モードでパッケージをインストール
 uv pip install -e .
 ```
 
-#### Option 2: Using Traditional venv + pip
+#### オプション2: 従来のvenv + pipを使用
 
 ```bash
-# Clone repository
+# リポジトリのクローン
 git clone https://github.com/dobachi/PresentationTemplate.git
 cd PresentationTemplate
 
-# Initialize AI_Instruction_Kits submodule
+# AI_Instruction_Kitsサブモジュールの初期化
 git submodule update --init --recursive
 
-# Create virtual environment
+# 仮想環境の作成
 python3 -m venv venv
 
-# Activate virtual environment
-source venv/bin/activate  # On Linux/macOS
-# venv\Scripts\activate    # On Windows
+# 仮想環境の有効化
+source venv/bin/activate  # Linux/macOS
+# venv\Scripts\activate    # Windows
 
-# Install dependencies
+# 依存関係のインストール
 pip install -r requirements.txt
 
-# Install package in development mode
+# 開発モードでパッケージをインストール
 pip install -e .
 ```
 
-## Quick Start
+## クイックスタート
 
-### Method 1: AI-Assisted Mode (Recommended)
+### 方法1: AI支援モード（推奨）
 
-Talk to Claude directly using the CLAUDE.md instruction file:
+CLAUDE.mdファイルを使ってClaudeと直接対話：
 
 ```
-I want to create a 15-minute presentation about Data Space International
-Interoperability, focusing on Japan-Europe collaboration (Ouranos and Gaia-X).
-Target audience is technical. Language: English.
+データスペース国際相互運用性について15分のプレゼンを作りたい。
+日欧協力（OuranosとGaia-X）に焦点を当てて。
+対象者は技術者、言語は日本語。
 ```
 
-Claude will:
-1. Ask clarifying questions
-2. Propose slide structure
-3. Generate diagrams automatically
-4. Create the PowerPoint file
+Claudeが以下を実行：
+1. 確認質問
+2. スライド構成の提案
+3. 図表の自動生成
+4. PowerPointファイルの作成
 
-### Method 2: Python API
+### 方法2: Python API
 
 ```python
 from src.core.presentation import PresentationBuilder
 from src.diagrams.architecture import ArchitectureDiagram
 from src.charts.statistical import StatisticalChart
 
-# Create builder
-builder = PresentationBuilder(theme='corporate', language='en')
+# ビルダーの作成
+builder = PresentationBuilder(theme='corporate', language='ja')
 
-# Add title slide
+# タイトルスライドの追加
 builder.add_title_slide(
-    title="Data Space International Interoperability",
-    subtitle="Japan-Europe Collaboration"
+    title="データスペース国際相互運用性",
+    subtitle="日欧協力"
 )
 
-# Generate and add architecture diagram
-arch_diagram = ArchitectureDiagram(language='en')
+# アーキテクチャ図の生成と追加
+arch_diagram = ArchitectureDiagram(language='ja')
 diagram_path = arch_diagram.create_three_layer_architecture(
     layers={
-        'application': ['App 1', 'App 2', 'App 3'],
-        'service': ['API Gateway', 'Auth Service', 'Data Catalog'],
-        'data': ['Metadata DB', 'Data Storage', 'Object Store']
+        'application': ['アプリ1', 'アプリ2', 'アプリ3'],
+        'service': ['APIゲートウェイ', '認証サービス', 'データカタログ'],
+        'data': ['メタデータDB', 'データストレージ', 'オブジェクトストア']
     }
 )
 builder.add_diagram_slide(
-    title="Data Space 3-Layer Architecture",
+    title="データスペース3層アーキテクチャ",
     diagram_path=diagram_path
 )
 
-# Generate and add chart
-chart = StatisticalChart(language='en')
+# グラフの生成と追加
+chart = StatisticalChart(language='ja')
 chart_path = chart.create_line_chart(
     data={
         'x': [2020, 2021, 2022, 2023, 2024],
@@ -156,48 +158,48 @@ chart_path = chart.create_line_chart(
         'y_gaiax': [30, 60, 95, 140, 200]
     },
     labels={
-        'x_axis': 'Year',
-        'y_axis': 'Adoption Rate',
+        'x_axis': '年度',
+        'y_axis': '採用率',
         'y_ouranos': 'Ouranos',
         'y_gaiax': 'Gaia-X'
     },
-    title='Data Space Adoption Trend'
+    title='データスペース採用トレンド'
 )
 builder.add_chart_slide(
-    title="Adoption Trends",
+    title="採用トレンド",
     chart_path=chart_path
 )
 
-# Save presentation
+# プレゼンテーションの保存
 builder.save('output/DataSpace_Interoperability.pptx')
 ```
 
-### Method 3: YAML Definition
+### 方法3: YAML定義
 
-Create a YAML file:
+YAMLファイルの作成：
 
 ```yaml
 presentation:
-  title: "Data Space Architecture"
+  title: "データスペースアーキテクチャ"
   author: "Dobachi"
-  language: "en"
+  language: "ja"
   theme: "corporate"
 
 slides:
   - type: title
-    title: "Data Space Architecture"
-    subtitle: "Overview and Components"
+    title: "データスペースアーキテクチャ"
+    subtitle: "概要とコンポーネント"
 
   - type: content
-    title: "Introduction"
+    title: "イントロダクション"
     layout: "text"
     bullets:
-      - "What is Data Space"
-      - "Why it matters"
-      - "Key components"
+      - "データスペースとは"
+      - "なぜ重要か"
+      - "主要コンポーネント"
 ```
 
-Generate:
+生成：
 
 ```python
 builder = PresentationBuilder()
@@ -206,38 +208,38 @@ builder.build_from_definition(builder.load_definition('my_presentation.yaml'))
 builder.save('output.pptx')
 ```
 
-## Supported Diagram Types
+## サポートする図表タイプ
 
-### Architecture Diagrams
+### アーキテクチャ図
 
-- 3-layer architecture (Data/Service/Application)
-- Cloud architecture (AWS, Azure, GCP)
-- Microservices architecture
-- International interoperability (Ouranos ↔ Gaia-X)
+- 3層アーキテクチャ（データ/サービス/アプリケーション）
+- クラウドアーキテクチャ（AWS、Azure、GCP）
+- マイクロサービスアーキテクチャ
+- 国際相互運用性（Ouranos ↔ Gaia-X）
 
-### Flowcharts
+### フローチャート
 
-- Process flows
-- Decision trees
-- Data flow diagrams
+- プロセスフロー
+- 決定木
+- データフロー図
 
-### Network Diagrams
+### ネットワーク図
 
-- Network topology
-- Interoperability networks
-- Connectivity diagrams
+- ネットワークトポロジー
+- 相互運用性ネットワーク
+- 接続図
 
-### Statistical Charts
+### 統計グラフ
 
-- Line charts
-- Bar charts (vertical/horizontal)
-- Scatter plots
-- Pie charts
-- Stacked bar charts
+- 折れ線グラフ
+- 棒グラフ（縦/横）
+- 散布図
+- 円グラフ
+- 積み上げ棒グラフ
 
-## Bilingual Support
+## バイリンガル対応
 
-### Japanese Presentation
+### 日本語プレゼンテーション
 
 ```python
 builder = PresentationBuilder(theme='corporate', language='ja')
@@ -247,7 +249,7 @@ builder.set_fonts(
 )
 ```
 
-### English Presentation
+### 英語プレゼンテーション
 
 ```python
 builder = PresentationBuilder(theme='corporate', language='en')
@@ -257,7 +259,7 @@ builder.set_fonts(
 )
 ```
 
-### Mixed Japanese-English
+### 日英混在
 
 ```python
 builder = PresentationBuilder(theme='corporate', language='ja_en')
@@ -267,66 +269,66 @@ builder.add_title_slide(
 )
 ```
 
-## Themes
+## テーマ
 
-Three built-in themes:
+3つの組み込みテーマ：
 
-- **Corporate**: Professional blue theme
-- **Technical**: Technical with dark accents
-- **Academic**: Academic style
+- **Corporate**: プロフェッショナルな青系テーマ
+- **Technical**: ダークアクセントの技術テーマ
+- **Academic**: アカデミックスタイル
 
-Custom themes can be created in `config/themes/`.
+カスタムテーマは`config/themes/`で作成可能。
 
-## Examples
+## サンプル
 
-See the `examples/` directory for:
+`examples/`ディレクトリを参照：
 
-- `architecture_example.py` - Architecture diagram examples
-- `full_presentation_example.py` - Complete presentation example
-- `example_conversation.md` - Sample AI conversation
+- `architecture_example.py` - アーキテクチャ図のサンプル
+- `full_presentation_example.py` - 完全なプレゼンテーションのサンプル
+- `example_conversation.md` - AIとの会話サンプル
 
-## AI Instruction Files
+## AI指示ファイル
 
-The project includes specialized AI instruction modules in `instructions/modules/`:
+`instructions/modules/`に専門的なAI指示モジュールを含む：
 
-- `presentation_designer.md` - Conversation guide for design
-- `diagram_generator.md` - Diagram creation instructions
-- `presentation_workflow.md` - End-to-end workflow
+- `presentation_designer.md` - 設計のための会話ガイド
+- `diagram_generator.md` - 図表作成指示
+- `presentation_workflow.md` - エンドツーエンドのワークフロー
 
-These work with the [AI_Instruction_Kits](https://github.com/dobachi/AI_Instruction_Kits) framework.
+これらは[AI_Instruction_Kits](https://github.com/dobachi/AI_Instruction_Kits)フレームワークと連携します。
 
-## Project Structure
+## プロジェクト構造
 
 ```
 PresentationTemplate/
 ├── src/
-│   ├── core/           # Core presentation building
-│   ├── diagrams/       # Diagram generation
-│   ├── charts/         # Chart generation
-│   └── ai/             # AI conversation flow
+│   ├── core/           # コアプレゼンテーション構築
+│   ├── diagrams/       # 図表生成
+│   ├── charts/         # グラフ生成
+│   └── ai/             # AI会話フロー
 ├── config/
-│   └── themes/         # Theme configurations
+│   └── themes/         # テーマ設定
 ├── instructions/
-│   ├── ai_instruction_kits/  # Submodule
-│   └── modules/        # Custom instruction modules
-├── examples/           # Usage examples
-└── templates/          # PowerPoint templates
+│   ├── ai_instruction_kits/  # サブモジュール
+│   └── modules/        # カスタム指示モジュール
+├── examples/           # 使用例
+└── templates/          # PowerPointテンプレート
 ```
 
-## License
+## ライセンス
 
 MIT License
 
-## Contributing
+## コントリビューション
 
-Contributions welcome! Please see CONTRIBUTING.md for guidelines.
+コントリビューション歓迎！ガイドラインはCONTRIBUTING.mdを参照してください。
 
-## Author
+## 作者
 
 Dobachi
 
-## Acknowledgments
+## 謝辞
 
-- Built on top of [AI_Instruction_Kits](https://github.com/dobachi/AI_Instruction_Kits)
-- Uses [python-pptx](https://python-pptx.readthedocs.io/)
-- Diagrams powered by [diagrams](https://diagrams.mingrammer.com/)
+- [AI_Instruction_Kits](https://github.com/dobachi/AI_Instruction_Kits)の上に構築
+- [python-pptx](https://python-pptx.readthedocs.io/)を使用
+- [diagrams](https://diagrams.mingrammer.com/)による図表生成
