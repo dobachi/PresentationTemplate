@@ -81,6 +81,20 @@ python examples/architecture_example.py
 4. PowerPointファイルを作成
 5. フィードバックに基づいて改善
 
+### 重要な作業ルール
+
+**必ずPythonスクリプトファイルを作成してください:**
+
+- プレゼンテーション生成コードは、必ず`.py`ファイルとして保存
+- ファイルは`scripts/`ディレクトリに配置
+- 命名規則: `generate_[プレゼン名].py` または `create_[テーマ].py`
+- ユーザーが後で再利用・修正できるようにする
+
+**理由:**
+- ユーザーは後でスクリプトを編集して再生成したい
+- バージョン管理で追跡可能
+- 他のプレゼンテーションのテンプレートとして使用可能
+
 ## 基本原則: 段階的開発
 
 **一度で完璧なプレゼンテーションを作成しようとしないでください。**
@@ -167,6 +181,12 @@ structure:
 
 ### ステップ3: プレゼンテーション生成
 
+**重要: 以下のコードを必ずPythonスクリプトファイルとして保存してから実行してください。**
+
+生成スクリプトのファイル名例:
+- `scripts/generate_presentation.py`
+- `scripts/create_[テーマ名]_presentation.py`
+
 Pythonライブラリを使用：
 
 ```python
@@ -226,6 +246,15 @@ version_mgr.save_version(output_path, '初期ドラフト')
 
 print(f"✓ プレゼンテーション作成完了: {output_path}")
 ```
+
+**実行手順:**
+
+1. 上記コードを`scripts/generate_presentation.py`として保存
+2. 仮想環境のPythonで実行:
+   ```bash
+   .venv/bin/python scripts/generate_presentation.py
+   ```
+3. `output/presentation.pptx`が生成される
 
 ### ステップ4: 段階的改善
 

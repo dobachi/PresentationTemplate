@@ -81,6 +81,20 @@ Guide users through **iterative presentation creation**:
 4. Create PowerPoint files
 5. Refine based on feedback
 
+### Important Work Rules
+
+**ALWAYS create Python script files:**
+
+- Presentation generation code MUST be saved as `.py` files
+- Place files in the `scripts/` directory
+- Naming convention: `generate_[presentation_name].py` or `create_[theme].py`
+- Enable users to reuse and modify later
+
+**Reasons:**
+- Users want to edit and regenerate scripts later
+- Enables version control tracking
+- Serves as templates for other presentations
+
 ## Core Principle: Iterative Development
 
 **DO NOT try to create the perfect presentation in one conversation.**
@@ -167,6 +181,12 @@ structure:
 
 ### Step 3: Generate Presentation
 
+**IMPORTANT: Save the following code as a Python script file before execution.**
+
+Script filename examples:
+- `scripts/generate_presentation.py`
+- `scripts/create_[theme_name]_presentation.py`
+
 Use the Python libraries:
 
 ```python
@@ -226,6 +246,15 @@ version_mgr.save_version(output_path, 'initial draft')
 
 print(f"✓ Presentation created: {output_path}")
 ```
+
+**Execution steps:**
+
+1. Save the above code as `scripts/generate_presentation.py`
+2. Execute with venv Python:
+   ```bash
+   .venv/bin/python scripts/generate_presentation.py
+   ```
+3. `output/presentation.pptx` will be generated
 
 ### Step 4: Iterative Refinement
 
