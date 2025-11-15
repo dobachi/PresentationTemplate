@@ -113,6 +113,22 @@ pip install -e .
 
 ## クイックスタート
 
+### 方法0: Makeを使用（最も簡単）
+
+```bash
+# 初回セットアップ
+make setup
+
+# プレゼンテーションをビルド
+make build SCRIPT=scripts/generate_presentation.py
+
+# サンプルを生成
+make examples
+
+# その他のコマンドを確認
+make help
+```
+
 ### 方法1: AI支援モード（推奨）
 
 CLAUDE.mdファイルを使ってClaudeと直接対話：

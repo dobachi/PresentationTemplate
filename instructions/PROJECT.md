@@ -297,11 +297,29 @@ print(f"✓ プレゼンテーション作成完了: {output_path}")
 **実行手順:**
 
 1. 上記コードを`scripts/generate_presentation.py`として保存
-2. 仮想環境のPythonで実行:
+2. プレゼンテーションをビルド:
+
+   **方法A: Makeを使用（推奨）**
+   ```bash
+   make build SCRIPT=scripts/generate_presentation.py
+   ```
+
+   **方法B: Pythonを直接実行**
    ```bash
    .venv/bin/python scripts/generate_presentation.py
    ```
+
 3. `output/presentation.pptx`が生成される
+
+**Makefileのその他のコマンド:**
+```bash
+make help          # 利用可能なコマンド一覧
+make setup         # 初回セットアップ
+make check         # 依存関係確認
+make examples      # サンプル生成
+make list-scripts  # 利用可能なスクリプト一覧
+make clean         # 生成ファイルを削除
+```
 
 ### ステップ4: 段階的改善
 

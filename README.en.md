@@ -113,6 +113,22 @@ pip install -e .
 
 ## Quick Start
 
+### Method 0: Using Make (Easiest)
+
+```bash
+# Initial setup
+make setup
+
+# Build presentation
+make build SCRIPT=scripts/generate_presentation.py
+
+# Generate examples
+make examples
+
+# See all available commands
+make help
+```
+
 ### Method 1: AI-Assisted Mode (Recommended)
 
 Talk to Claude directly using the CLAUDE.md instruction file:

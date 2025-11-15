@@ -297,11 +297,29 @@ print(f"✓ Presentation created: {output_path}")
 **Execution steps:**
 
 1. Save the above code as `scripts/generate_presentation.py`
-2. Execute with venv Python:
+2. Build the presentation:
+
+   **Method A: Using Make (Recommended)**
+   ```bash
+   make build SCRIPT=scripts/generate_presentation.py
+   ```
+
+   **Method B: Direct Python execution**
    ```bash
    .venv/bin/python scripts/generate_presentation.py
    ```
+
 3. `output/presentation.pptx` will be generated
+
+**Other Makefile commands:**
+```bash
+make help          # List available commands
+make setup         # Initial setup
+make check         # Check dependencies
+make examples      # Generate examples
+make list-scripts  # List available scripts
+make clean         # Remove generated files
+```
 
 ### Step 4: Iterative Refinement
 
