@@ -315,6 +315,15 @@ PresentationTemplate/
 └── templates/          # PowerPointテンプレート
 ```
 
+## トラブルシューティング
+
+問題が発生した場合は、[トラブルシューティングガイド](TROUBLESHOOTING.md)を参照してください。
+
+よくある問題：
+- **Graphvizエラー**: システムにGraphvizがインストールされていることを確認
+- **日本語フォントの問題**: Meiryoまたは代替フォントがインストールされている必要があります
+- **依存関係エラー**: `uv pip install -r requirements.txt` で再インストール
+
 ## ライセンス
 
 MIT License

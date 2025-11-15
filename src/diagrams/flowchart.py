@@ -6,6 +6,7 @@ diagrams using graphviz.
 """
 
 import os
+import shutil
 from typing import Dict, List, Any, Optional
 
 
@@ -41,6 +42,26 @@ class FlowchartDiagram:
         self.output_dir = output_dir
 
         os.makedirs(output_dir, exist_ok=True)
+
+        # Check if Graphviz is installed on system
+        self._check_graphviz_installed()
+
+    def _check_graphviz_installed(self) -> bool:
+        """
+        Check if Graphviz executable is installed on the system.
+
+        Returns:
+            True if installed, False otherwise
+        """
+        if shutil.which('dot') is None:
+            print("\n⚠️  Warning: Graphviz not found on system PATH")
+            print("Flowchart generation will fail without Graphviz installed.")
+            print("\nPlease install Graphviz:")
+            print("  Ubuntu/Debian: sudo apt-get install graphviz")
+            print("  macOS: brew install graphviz")
+            print("  Windows: Download from https://graphviz.org/download/")
+            return False
+        return True
 
     def _get_label(self, key: str, en: str, ja: str) -> str:
         """Get localized label."""
@@ -100,12 +121,22 @@ class FlowchartDiagram:
             return output_path + ".png"
 
         except ImportError as e:
-            print(f"Error: 'graphviz' library not installed: {e}")
-            print("Install with: pip install graphviz")
+            print(f"Error: 'graphviz' Python library not installed: {e}")
+            print("Install with: pip install graphviz  (or: uv pip install graphviz)")
+            return ""
+
+        except FileNotFoundError as e:
+            print(f"Error: Graphviz executable not found: {e}")
+            print("\nGraphviz software is not installed on your system.")
+            print("Please install it:")
+            print("  Ubuntu/Debian: sudo apt-get install graphviz")
+            print("  macOS: brew install graphviz")
+            print("  Windows: Download from https://graphviz.org/download/")
             return ""
 
         except Exception as e:
             print(f"Error creating flowchart: {e}")
+            print("This might be due to missing Graphviz system installation.")
             return ""
 
     def create_decision_tree(
@@ -155,11 +186,22 @@ class FlowchartDiagram:
             return output_path + ".png"
 
         except ImportError as e:
-            print(f"Error: 'graphviz' library not installed: {e}")
+            print(f"Error: 'graphviz' Python library not installed: {e}")
+            print("Install with: pip install graphviz  (or: uv pip install graphviz)")
+            return ""
+
+        except FileNotFoundError as e:
+            print(f"Error: Graphviz executable not found: {e}")
+            print("\nGraphviz software is not installed on your system.")
+            print("Please install it:")
+            print("  Ubuntu/Debian: sudo apt-get install graphviz")
+            print("  macOS: brew install graphviz")
+            print("  Windows: Download from https://graphviz.org/download/")
             return ""
 
         except Exception as e:
             print(f"Error creating decision tree: {e}")
+            print("This might be due to missing Graphviz system installation.")
             return ""
 
     def create_data_flow_diagram(
@@ -215,9 +257,20 @@ class FlowchartDiagram:
             return output_path + ".png"
 
         except ImportError as e:
-            print(f"Error: 'graphviz' library not installed: {e}")
+            print(f"Error: 'graphviz' Python library not installed: {e}")
+            print("Install with: pip install graphviz  (or: uv pip install graphviz)")
+            return ""
+
+        except FileNotFoundError as e:
+            print(f"Error: Graphviz executable not found: {e}")
+            print("\nGraphviz software is not installed on your system.")
+            print("Please install it:")
+            print("  Ubuntu/Debian: sudo apt-get install graphviz")
+            print("  macOS: brew install graphviz")
+            print("  Windows: Download from https://graphviz.org/download/")
             return ""
 
         except Exception as e:
             print(f"Error creating data flow diagram: {e}")
+            print("This might be due to missing Graphviz system installation.")
             return ""

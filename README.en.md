@@ -315,6 +315,15 @@ PresentationTemplate/
 └── templates/          # PowerPoint templates
 ```
 
+## Troubleshooting
+
+If you encounter issues, see the [Troubleshooting Guide](TROUBLESHOOTING.en.md).
+
+Common issues:
+- **Graphviz errors**: Ensure Graphviz is installed on your system
+- **Japanese font issues**: Meiryo or fallback fonts must be installed
+- **Dependency errors**: Reinstall with `uv pip install -r requirements.txt`
+
 ## License
 
 MIT License
