@@ -55,7 +55,23 @@ Download from https://graphviz.org/download/
 
 ### Install Package
 
-#### Option 1: Using uv (Recommended - Fast)
+#### Quick Setup (Recommended)
+
+**One-liner automatic setup:**
+
+```bash
+bash scripts/setup.sh
+```
+
+This script automatically:
+- Detects uv or pip
+- Creates virtual environment
+- Installs dependencies
+- Verifies installation
+
+#### Manual Setup
+
+##### Option 1: Using uv (Recommended - Fast)
 
 ```bash
 # Clone repository
@@ -74,7 +90,7 @@ source .venv/bin/activate  # On Linux/macOS
 uv pip install -e .
 ```
 
-#### Option 2: Using Traditional venv + pip
+##### Option 2: Using Traditional venv + pip
 
 ```bash
 # Clone repository
