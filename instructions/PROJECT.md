@@ -598,6 +598,13 @@ except Exception as e:
     )
 ```
 
+## AI指示書キット (v2.0) スキルベースアーキテクチャ
+
+ROOT_INSTRUCTION.mdはスキルオーケストレーターです。`.claude/skills/`のインストール済みスキルを確認し、タスクに応じて利用してください。
+
+利用可能なスキルやテンプレートについては、AI Instruction Kits Marketplace を参照してください:
+https://github.com/dobachi/AI_Instruction_Kits
+
 ## ライセンス
 
 MIT License

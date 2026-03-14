@@ -598,6 +598,13 @@ except Exception as e:
     )
 ```
 
+## AI Instruction Kits (v2.0) Skill-Based Architecture
+
+ROOT_INSTRUCTION.md serves as the skill orchestrator. Check the installed skills in `.claude/skills/` and use them according to the task at hand.
+
+For available skills and templates, see the AI Instruction Kits Marketplace:
+https://github.com/dobachi/AI_Instruction_Kits
+
 ## License
 
 MIT License
