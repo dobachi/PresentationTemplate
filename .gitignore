@@ -58,7 +58,6 @@ output/
 
 # Logs
 *.log
-checkpoint.log
 
 # OS
 .DS_Store

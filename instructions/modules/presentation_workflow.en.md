@@ -28,23 +28,9 @@
 2. Accept modification requests
 3. Regenerate
 
-## Checkpoint Integration
+## Progress Tracking
 
-Use AI_Instruction_Kits checkpoint system:
-
-```bash
-# Start task
-checkpoint.sh start "Presentation creation: Data Space Interoperability"
-
-# Progress reports
-checkpoint.sh progress TASK-001 1 4 "Requirements definition complete"
-checkpoint.sh progress TASK-001 2 4 "Slide structure determined"
-checkpoint.sh progress TASK-001 3 4 "Diagram generation complete"
-checkpoint.sh progress TASK-001 4 4 "PowerPoint generation complete"
-
-# Task completion
-checkpoint.sh complete TASK-001 "Presentation completed"
-```
+Track progress with your AI tool's native task management (e.g. Todo).
 
 ## Example: Creating Data Space Interoperability Presentation
 

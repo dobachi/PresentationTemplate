@@ -28,23 +28,9 @@
 2. 修正要望の受付
 3. 再生成
 
-## チェックポイント統合
+## 進捗管理
 
-AI_Instruction_Kitsのチェックポイントシステムを使用：
-
-```bash
-# タスク開始
-checkpoint.sh start "プレゼンテーション作成: データスペース相互運用性"
-
-# 進捗報告
-checkpoint.sh progress TASK-001 1 4 "要件定義完了"
-checkpoint.sh progress TASK-001 2 4 "スライド構成決定"
-checkpoint.sh progress TASK-001 3 4 "図表生成完了"
-checkpoint.sh progress TASK-001 4 4 "PowerPoint生成完了"
-
-# タスク完了
-checkpoint.sh complete TASK-001 "プレゼンテーション完成"
-```
+進捗管理はAIツールのネイティブなタスク管理（Todo等）を利用してください。
 
 ## 使用例: データスペース相互運用性プレゼン作成
 
